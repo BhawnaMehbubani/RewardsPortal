@@ -56,10 +56,10 @@ RewardsPortal/
 
 ## Installation and Setup
 ### Prerequisites
-```plaintext
-Python 3.6+ installed
-Flask installed (via pip)
-```
+
+- Python 3.6+ installed
+- Flask installed (via pip)
+
 ### Steps
 #### Clone the Repository
 ```plaintext
