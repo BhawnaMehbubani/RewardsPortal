@@ -1,0 +1,128 @@
+{% extends "main.html" %}
+ 
+{% block title %}
+ 
+    Dashboard
+ 
+{% endblock %}
+ 
+{% block content %}
+ 
+<div class="container">
+ 
+    <h1>Welcome to Your Dashboard</h1>
+ 
+    <!-- Add your dashboard content here -->
+ 
+    <div class="row mt-3">
+ 
+        <div class="col">
+ 
+            <h2>Post Your Queries</h2>
+ 
+            <div class="form-group">
+ 
+                <textarea class="form-control" id="new-query-section" rows="5" placeholder="Enter your query"></textarea>
+ 
+            </div>
+ 
+            <button class="btn btn-primary" id="postButton">Post</button>
+ 
+            <button class="btn btn-secondary" id="cancelButton">Cancel</button>
+ 
+        </div>
+ 
+    </div>
+ 
+    <div class="row mt-3">
+ 
+        <div class="col">
+ 
+            <h2>Your Queries</h2>
+ 
+            <ul id="queryList">
+ 
+                <!-- Your list of queries will be displayed here -->
+ 
+            </ul>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
+ 
+{% block scripts %}
+ 
+<script>
+ 
+    $(document).ready(function () {
+ 
+        // Event listener for post button
+ 
+        $('#postButton').click(function () {
+ 
+            var query = $('#new-query-section').val();
+ 
+            if (query.trim() !== '') {
+ 
+                // Perform AJAX request to post query
+ 
+                $.ajax({
+ 
+                    type: 'POST',
+ 
+                    url: '/post_query', // Change the URL to your endpoint
+ 
+                    data: { query: query },
+ 
+                    success: function (response) {
+ 
+                        // Handle successful response
+ 
+                        console.log('Query posted successfully');
+ 
+                        // Add the posted query to the list
+ 
+                        $('#queryList').append('<li>' + query + '</li>');
+ 
+                    },
+ 
+                    error: function (xhr, status, error) {
+ 
+                        // Handle errors
+ 
+                        console.error('Error posting query:', error);
+ 
+                    }
+ 
+                });
+ 
+            } else {
+ 
+                // Show error message if query is empty
+ 
+                alert('Please enter a query before posting.');
+ 
+            }
+ 
+        });
+ 
+        // Event listener for cancel button
+ 
+        $('#cancelButton').click(function () {
+ 
+            // Clear the text area
+ 
+            $('#new-query-section').val('');
+ 
+        });
+ 
+    });
+ 
+</script>
+ 
+{% endblock %}
+ 

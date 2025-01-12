@@ -1,0 +1,398 @@
+{
+  "users": {
+    "users": [
+      {
+        "user_id": 1,
+        "username": "user123",
+        "password": "password123",
+        "user_details": {
+          "first_name": "John",
+          "middle_name": "",
+          "last_name": "Doe",
+          "photo": "path_to_photo/user123_photo.jpg",
+          "phone_number": "1234567890",
+          "email_address": "user123@example.com"
+        },
+        "reward_points": 500,
+        "signup_details": {
+          "signup_date": "2023-10-16T09:00:00Z"
+        },
+        "login_details": {
+          "last_login_date": "2023-10-16T11:30:00Z",
+          "current_login_date": "2023-10-17T08:15:00Z",
+          "active_session": "Yes"
+        }
+      },
+      {
+        "user_id": 2,
+        "username": "jane_doe",
+        "password": "securepassword",
+        "user_details": {
+          "first_name": "Jane",
+          "middle_name": "",
+          "last_name": "Doe",
+          "photo": "path_to_photo/jane_doe_photo.jpg",
+          "phone_number": "9876543210",
+          "email_address": "jane.doe@example.com"
+        },
+        "reward_points": 750,
+        "signup_details": {
+          "signup_date": "2023-10-15T11:00:00Z"
+        },
+        "login_details": {
+          "last_login_date": "2023-10-16T14:45:00Z",
+          "current_login_date": "2023-10-17T09:30:00Z",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 3,
+        "username": "Empower123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Empower123.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 4,
+        "username": "Empower123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Empower123.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 5,
+        "username": "Cognizant",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Cognizant.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 6,
+        "username": "Unitech",
+        "password": "@spashowerB9897",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Unitech.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 7,
+        "username": "user123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "user123.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 8,
+        "username": "bhwmhb123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Screenshot_5.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 9,
+        "username": "bhwmhb123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Screenshot_6.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 10,
+        "username": "user123",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Empower123.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 11,
+        "username": "Cognizant",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Bhawna",
+          "middle_name": "Bharat",
+          "last_name": "Mehbubani",
+          "email_address": "Bhawna.BMehbubani@cognizant.com",
+          "phone_number": "1234567890",
+          "photo": "Cognizant.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-06"
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-06",
+          "active_session": "NO"
+        }
+      },
+      {
+        "user_id": 12,
+        "username": "MountainDew",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Mountain",
+          "middle_name": "",
+          "last_name": "Dew",
+          "email_address": "mountaindew@gmail.com",
+          "phone_number": "1234567890",
+          "photo": "MountainDew.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-14",
+          "active_session": true
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-14"
+        }
+      },
+      {
+        "user_id": 13,
+        "username": "CheeseCake",
+        "password": "Hihellobye@123",
+        "user_details": {
+          "first_name": "Cheese",
+          "middle_name": "",
+          "last_name": "Cake",
+          "email_address": "cheesecake@gmail.com",
+          "phone_number": "1234567890",
+          "photo": "CheeseCake.jpg"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-14",
+          "active_session": true
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-14"
+        }
+      },
+      {
+        "user_id": 14,
+        "username": "minniemouse",
+        "password": "Minniemouse@123",
+        "user_details": {
+          "first_name": "minnie",
+          "middle_name": "little",
+          "last_name": "mouse",
+          "email_address": "minniemouse@gmail.com",
+          "phone_number": "1234567890",
+          "photo": "minniemouse.jpg"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2023-12-15",
+          "active_session": true
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2023-12-15"
+        }
+      },
+      {
+        "user_id": 15,
+        "username": "tt123",
+        "password": "@Password123",
+        "user_details": {
+          "first_name": "tt",
+          "middle_name": "",
+          "last_name": "12",
+          "email_address": "tt123@gmail.com",
+          "phone_number": "1234567890",
+          "photo": "tt123.png"
+        },
+        "reward_points": 0,
+        "signup_details": {
+          "signup_date": "2024-02-05",
+          "active_session": true
+        },
+        "login_details": {
+          "last_login_date": null,
+          "current_login_date": "2024-02-05"
+        }
+      }
+    ]
+  },
+  "search_results": [
+    {
+      "query_id": 1,
+      "query_title": "How to install Python on Windows?",
+      "query_description": "I'm looking for steps to install Python on a Windows operating system.",
+      "query_posted_by": "UserA",
+      "query_posted_date_time": "2023-10-16T09:00:00Z",
+      "query_keywords": [
+        "Python",
+        "install",
+        "Windows"
+      ],
+      "total_views": 150,
+      "total_solutions": 2,
+      "total_votes": 24,
+      "solutions": [
+        {
+          "solution_id": 1,
+          "solution_description": "To install Python on Windows, follow these steps:\n1. Visit the official Python website (python.org).\n2. Go to the 'Downloads' section.\n3. Choose the appropriate Python version for Windows.\n4. Download the installer.\n5. Run the installer and follow the installation wizard.\n6. Ensure to check the 'Add Python X.Y to PATH' option during installation.\n7. Click 'Install Now.'\n8. Python will be installed on your Windows system.",
+          "solution_posted_by": "User123",
+          "solution_posted_date_time": "2023-10-16T10:00:00Z",
+          "up_votes": 10,
+          "down_votes": 2
+        },
+        {
+          "solution_id": 2,
+          "solution_description": "Another method to install Python on Windows is by using Anaconda:\n1. Download the Anaconda installer from the official Anaconda website.\n2. Run the installer and follow the installation wizard.\n3. Anaconda includes Python and additional scientific computing packages.\n4. Python will be installed along with Anaconda on your Windows system.",
+          "solution_posted_by": "User456",
+          "solution_posted_date_time": "2023-10-16T11:30:00Z",
+          "up_votes": 14,
+          "down_votes": 2
+        }
+      ],
+      "id": "3f5e"
+    },
+    {
+      "query_id": 2,
+      "query_title": "How to create a new Git repository?",
+      "query_description": "I need instructions on creating a new Git repository for my project.",
+      "query_posted_by": "UserB",
+      "query_posted_date_time": "2023-10-16T12:00:00Z",
+      "query_keywords": [
+        "Git",
+        "repository",
+        "create"
+      ],
+      "total_views": 120,
+      "total_solutions": 1,
+      "total_votes": 15,
+      "solutions": [
+        {
+          "solution_id": 3,
+          "solution_description": "To create a new Git repository, follow these steps:\n1. Open a terminal or command prompt.\n2. Navigate to the directory where you want to create the repository using the 'cd' command.\n3. Type 'git init' to initialize a new Git repository in the current directory.\n4. Your repository is now created and ready to use.\n5. You can start adding files, committing changes, and pushing to the repository.",
+          "solution_posted_by": "User789",
+          "solution_posted_date_time": "2023-10-16T13:00:00Z",
+          "up_votes": 15,
+          "down_votes": 0
+        }
+      ],
+      "id": "134c"
+    }
+  ]
+}

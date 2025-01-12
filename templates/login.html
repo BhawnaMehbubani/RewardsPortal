@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+ 
+{% block title %}
+Login
+{% endblock %}                      
+{% block content %}
+<!--Flash message after sucessful login-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <!--Bootstrap dismissable alert-->
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+      <strong>Message:</strong> {{message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+ 
+        <!--Login_Form-->
+        <div class="row">
+            <div class="mx-auto col-10 col-md-8 col-lg-6">
+          <form method="POST" action="/login" class="my-3">
+            <div class="jumbotron text-center my-3">
+              <h2>Login here</h2>
+            </div>
+            <!--Form-->
+            <div class="form-group">
+              <label for="formGroupExampleInput" id="username">Username</label>
+              <input type="text" class="form-control" name="username"  placeholder="Username" required>
+            </div>
+             
+              <div class="form-group">
+                <label for="exampleInputPassword1" id="password">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <!--Buttons-->
+              <div>
+                <button class="btn btn-dark" type="submit" >Login</button>
+                <button class="btn btn-dark" type="reset" onclick="window.location.href = 'index.html';">Cancel</button>
+            </div>
+           
+          <!--Doesn't have an account? SignUp-->
+     
+                <h3><a class='btn btn-link' href="signup.html">Doesn't have an account? SignUp</a></h3>
+          </div>
+         
+     
+         
+        </form>
+      </div>
+ 
+ 
+{%endblock content%}

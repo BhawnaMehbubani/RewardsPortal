@@ -1,0 +1,123 @@
+{% extends 'main.html' %}
+ 
+{% block title %}
+SignUp
+{% endblock %}                      
+{% block content %}
+ 
+        <!--SignUp_Form-->
+<br>
+        <div class="row">
+            <div class="mx-auto col-10 col-md-8 col-lg-6 ">
+              <form class='my-3' method='POST' action='/signup' enctype="multipart/form-data">
+                <div class="jumbotron text-center my-3">
+                  <h2>Sign Up here</h2>
+                </div>
+                <div class="form-group ">
+                  <label for="formGroupExampleInput">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Username (alphanumeric, 4-20 characters)" required>
+                </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">First Name</label>
+                    <input type="text"- class="form-control" id="first_name" name="first_name" placeholder="First Name (text only)" required>
+                  </div>
+                 
+                  <div class="form-group">
+                      <label for="formGroupExampleInput2">Middle Name</label>
+                      <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Middle Name (optional)">
+                    </div>      
+                   
+                     <div class="form-group">
+                    <label for="formGroupExampleInput2">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name (text only)" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="email_address" name="email_address" aria-describedby="emailHelp" placeholder="Email" required>
+                  </div>
+                      <div class="form-group">
+                          <label for="exampleInputPhoneNumber1">Phone number</label>
+                          <input type="tel" class="form-control" name="phone_number" id="phone_number" placeholder="Phone Number" required>
+                      </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password (8-20 characters, one uppercase, one lowercase, one special character)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                </div>
+                  <small class="text-secondary">Must contain at least <li>8 or more characters</li><li>one number</li> <li>one uppercase letter</li> <li>one lowercase letter</li></small>
+                  <div class="form-group">
+                      <br>
+                      <label for="exampleInputPassword1">Confirm Password</label>
+                      <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm Password" onkeyup="confirm_password_function()" required>
+                  </div>
+                 
+                      <div class="form-group">
+                        <label for="exampleFormControlFile1">Photo Upload</label>
+                        <input type="file" class="form-control-file"  name="photo" accept="image/*" id="photo" required>
+                      </div>
+                     <!--Buttons-->
+                              <!--Buttons-->
+                              <span id="wrong_pass_alert"></span>
+                              <div>
+                                <button class="btn btn-dark" type="submit" value="Sign Up" onclick="wrong_pass_alert()">Sign Up</button>
+                                <button class="btn btn-dark" type="reset" value="Reset">Clear</button>
+                            </div>
+                            <!--Already have an account? Login-->
+                              <h3><a class='btn btn-link' href="login.html">Already have an account? Login</a></h3>
+                </form>
+     
+          </div>
+          </div>
+     
+          <script>
+            function confirm_password_function(){
+                    var pass = document.getElementById('password').value;
+     
+                    var confirm_pass = document.getElementById('confirm_password').value;
+     
+                    if (pass != confirm_pass) {
+     
+                        document.getElementById('wrong_pass_alert').style.color = 'red';
+     
+                        document.getElementById('wrong_pass_alert').innerHTML
+     
+                            = '☒ Use same password';
+     
+                        document.getElementById('create').disabled = true;
+     
+                        document.getElementById('create').style.opacity = (0.4);
+     
+                    } else {
+     
+                        document.getElementById('wrong_pass_alert').style.color = 'green';
+     
+                        document.getElementById('wrong_pass_alert').innerHTML =
+     
+                            '🗹 Password Matched';
+     
+                        document.getElementById('create').disabled = false;
+     
+                        document.getElementById('create').style.opacity = (1);
+     
+                    }
+            }
+     
+     
+                      function wrong_pass_alert() {
+     
+                        var pass = document.getElementById('password').value;
+     
+                        var confirm_pass = document.getElementById('confirm_password').value;
+     
+                                  if (pass!=confirm_pass) {
+     
+                                      alert("Passwords don't match");
+     
+                                  } else {
+     
+                                      alert("Your response is submitted");
+     
+                                  }
+                      }
+          </script>
+ 
+{%endblock content%}

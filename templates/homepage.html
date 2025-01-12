@@ -1,0 +1,178 @@
+{% extends "main.html" %}
+ 
+{% block title %}
+ 
+    Homepage
+ 
+{% endblock %}
+ 
+{% block content %}
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ 
+    <div class="container-fluid">
+ 
+        <a class="navbar-brand" href="/">Logo</a>
+ 
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+ 
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+ 
+                <li class="nav-item">
+ 
+                    <a class="nav-link active" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+ 
+                </li>
+ 
+                <li class="nav-item">
+ 
+                    <a class="nav-link active" href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a>
+ 
+                </li>
+ 
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+ 
+                <li></li><li></li><li></li>
+ 
+                <form class="form-inline">
+ 
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+ 
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ 
+                </form>
+ 
+                <li></li>
+ 
+                <li class="nav-item">
+ 
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
+ 
+                </li>
+ 
+                <li class="nav-item">
+ 
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('sign_up') }}">Sign Up</a>
+ 
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+    </div>
+ 
+</nav>
+ 
+<div class="container-fluid">
+ 
+    <div class="jumbotron jumbotron-fluid text-center">
+ 
+        <h1>Details of QNA Rewards Portal</h1>
+ 
+        <div class="container-fluid">
+ 
+            <p>A Question and Answers (Q&A) rewards portal in the insurance domain is a platform where users can engage in discussions, ask questions related to insurance topics, and provide answers to queries from others. Here are some key details about such a portal:</p>
+ 
+            <ul>
+ 
+                <li>User Participation: Users can sign up and actively participate by asking insurance-related questions or providing informative answers to questions from fellow users.</li>
+ 
+                <li>Gamification: To incentivize user engagement, these portals often implement gamification elements, such as rewarding users with points, badges, or other rewards for their contributions.</li>
+ 
+                <li>Knowledge Sharing: The primary goal is to create a community-driven platform where insurance knowledge is shared and users can learn from one another.</li>
+ 
+                <li>Expert Contributors: Some portals may have insurance experts or professionals who contribute valuable insights and answers to enhance the quality of information available.</li>
+ 
+                <li>System: Users can earn rewards for their participation, which can include gift cards, discounts on insurance premiums, or other perks related to the insurance industry.</li>
+ 
+                <li>Moderation: To maintain the quality of content and prevent misuse, Q&A portals often have moderation systems in place to review and approve user-generated content.</li>
+ 
+                <li>Categories and Topics: The portal typically covers a wide range of insurance topics, including policy types, claims processing, coverage options, and more, categorized for easy navigation.</li>
+ 
+                <li>Community Building: Over time, these portals aim to build a strong and knowledgeable community of users who actively contribute and engage with insurance-related discussions.</li>
+ 
+                <li>Privacy: Data security and privacy are crucial, especially in the insurance domain. These portals should have strict privacy policies in place to protect user information.</li>
+ 
+            </ul>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+<div class="modal" id="aboutModal" tabindex="-1" role="dialog">
+ 
+    <div class="modal-dialog" role="document">
+ 
+        <div class="modal-content">
+ 
+            <div class="modal-header">
+ 
+                <h5 class="modal-title">About</h5>
+ 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ 
+                    <span aria-hidden="true">&times;</span>
+ 
+                </button>
+ 
+            </div>
+ 
+            <div class="modal-body">
+ 
+                <p>Hi! This is the about section!</p>
+ 
+            </div>
+ 
+            <div class="modal-footer">
+ 
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+<div class="modal" id="contactModal" tabindex="-1" role="dialog">
+ 
+    <div class="modal-dialog" role="document">
+ 
+        <div class="modal-content">
+ 
+            <div class="modal-header">
+ 
+                <h5 class="modal-title">Contact Us</h5>
+ 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ 
+                    <span aria-hidden="true">&times;</span>
+ 
+                </button>
+ 
+            </div>
+ 
+            <div class="modal-body">
+ 
+                <p>Please contact us on 000-000-000!</p>
+ 
+            </div>
+ 
+            <div class="modal-footer">
+ 
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
+ 

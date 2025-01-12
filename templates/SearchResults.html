@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Title</title>
+    <style>
+        li {
+      margin-right: 30px;
+    }
+    </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Logo</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page">Contact Us</a>
+                    </li>
+                    <form class="form-inline" action="/gen_search_results" method = "post">
+                          <input class="form-control mr-sm-2" type="search" placeholder="{{user_keyword}}" aria-label="Search" name="keyword">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <li></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href=#>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href=#>Sign Up</a>
+                    </li>
+ 
+ 
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+<br>
+ 
+<div class="container">
+    <div class="text-start">
+        <h1> Search Results</h1>
+    </div>
+ 
+    <div class="hstack gap-3">
+        <form action="/gen_search_results" method="post">
+            <div class="p-2">Results for {{user_keyword}}</div>
+        </form>
+    </div>
+    <div class="hstack gap-3">
+        {% if user_keyword in keywords_output %}
+            {% if counter==1 %}
+            <div class="p-2"> {{counter}} Result</div>
+            {% else %}
+            <div class="p-2"> {{counter}} Results</div>
+            {% endif %}
+        {% else %}
+            {% if counter1==1 %}
+            <div class="p-2"> {{counter1}} Result</div>
+            {% else %}
+            <div class="p-2"> {{counter1}} Result</div>
+            {% endif %}
+        {% endif %}
+ 
+    </div>
+</div>
+<form action="/gen_search_results" method="post">
+    {% if user_keyword in keywords_output %}
+    {% for search_results in results %}
+    {% if user_keyword in search_results["query_title"] %}
+    <div>
+        <div class="container">
+            <div class="p-3 border bg-light">
+                <div class="container text-center">
+ 
+                </div>
+ 
+ 
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                   href="{{url_for('display_query',title=search_results['query_title']) }}">
+                    {{search_results["query_title"]}}
+ 
+                </a>
+ 
+                <div style="height: 50px;">
+                    <p class="mh-100" style="width: 900px; height: 200px;">
+ 
+                        {{search_results["query_description"]}}
+ 
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col"><span class="badge text-bg-primary">
+ 
+                            {{search_results["total_votes"]}} votes
+ 
+                    </span></div>
+                    <div class="col"><span class="badge text-bg-success">
+ 
+                            {{search_results["total_solutions"]}} answered
+ 
+                    </span>
+                    </div>
+                    <div class="col"><span class="badge text-bg-danger">
+ 
+                            {{search_results["total_views"]}} views
+ 
+                    </span></div>
+                    <div class="col"><span class="d-flex justify-content-end">
+ 
+                            {{search_results["query_posted_by"]}} {{search_results["query_posted_date_time"]}}
+ 
+                    </span>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+ 
+    </div>
+    <br>
+    {% endif %}
+    {% endfor %}
+ 
+    {% else %}
+ 
+    {% for search_results in results %}
+    {% if output_keyword in search_results["query_title"] %}
+    <div>
+        <div class="container">
+            <div class="p-3 border bg-light">
+                <div class="container text-center">
+ 
+                </div>
+ 
+ 
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                   href="#">
+                    {{search_results["query_title"]}}
+ 
+                </a>
+ 
+                <div style="height: 50px;">
+                    <p class="mh-100" style="width: 900px; height: 200px;">
+ 
+                        {{search_results["query_description"]}}
+ 
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col"><span class="badge text-bg-primary">
+ 
+                            {{search_results["total_votes"]}} votes
+ 
+                    </span></div>
+                    <div class="col"><span class="badge text-bg-success">
+ 
+                            {{search_results["total_solutions"]}} answered
+ 
+                    </span>
+                    </div>
+                    <div class="col"><span class="badge text-bg-danger">
+ 
+                            {{search_results["total_views"]}} views
+ 
+                    </span></div>
+                    <div class="col"><span class="d-flex justify-content-end">
+ 
+                            {{search_results["query_posted_by"]}} {{search_results["query_posted_date_time"]}}
+ 
+                    </span>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+ 
+    </div>
+    <br>
+    {% endif %}
+    {% endfor %}
+ 
+    {% endif %}
+</form>
+ 
+<br>
+<form action="/gen_search_results" method="post">
+    {% if  len_results > 5 %}
+    <div class="grid gap-0 row-gap-3">
+        <div class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+ 
+        </div>
+    </div>
+    {% endif %}
+</form>
+</body>
+</html>
+ 

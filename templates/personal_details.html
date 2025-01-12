@@ -1,0 +1,179 @@
+{% extends 'main.html' %} {% block title %} Personal Details {% endblock %} {%
+block content %}
+<div class="row">
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form>
+            <div class="jumbotron text-center my-3">
+                <div class="float-right">
+                    <button class="btn btn-dark" type="submit" value="Submit">
+                        Claim
+                    </button>
+                </div>
+                <h2>Total Rewards</h2>
+                <p>The Total rewards achieved by you is displayed here</p>
+                <!-- Image of reward points -->
+            </div>
+        </form>
+    </div>
+</div>
+</form>
+<!-- Personal Details Form -->
+<br />
+<div>
+   
+    <div class="row">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+            <form id="PersonalDetailsForm" class="my-3" action="/personal_details" method='POST'>
+                <div class="float-right">
+                    <button class="btn btn-dark" id="editBtn">Edit</button>
+                </div>
+                <h2>Personal Details</h2>
+                <fieldset disabled id="disabledFieldset">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name"
+                            value="{{ user.first_name }}" placeholder="First Name (text only)" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Middle Name</label>
+                        <input type="text" class="form-control" id="middle_name" name="middle_name" value="{{ user.middle_name }}" placeholder="Middle Name (optional)">
+                      </div>      
+                     
+                       <div class="form-group">
+                      <label for="formGroupExampleInput2">Last Name</label>
+                      <input type="text" class="form-control" id="last_name" name="last_name" value="{{user.last_name }}"  placeholder="Last Name (text only)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email_address" name="email_address" value="{{ user.email_address }}" aria-describedby="emailHelp" placeholder="Email" required>
+                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputPhoneNumber1">Phone number</label>
+                            <input type="tel" class="form-control" name="phone_number" id="phone_number" value="{{user.phone_number}}" placeholder="Phone Number" required>
+                        </div>
+                    <!-- Similar fields for middle name, last name, email, phone -->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Photo</label>
+                        <div class="form-group">
+                            {% if user.photo %}
+                            <img src="static/photos/{{ user.photo }}" style="max-width:50%;" alt="User Photo"
+                                id="userPhoto" />
+                            {% else %}
+                            <p>No photo available</p>
+                            {% endif %}
+                            <input type="file" class="form-control-file" name="photo" id="photo"
+                                style="display: none" />
+                            <br>
+                            <br>
+                            <!-- Upload Photo Button -->
+                            <div class="form-group" id="uploadBtn">
+                                <input type="file" class="form-control-file" name="photo" id="photo" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+           
+            <br />
+            <div>
+               
+                <button class="btn btn-dark" type="submit" value="Save" id="saveBtn" style="display: none"
+                    onclick="saveAndUpdate()">Save</button>
+                <button class="btn btn-dark" type="reset" onclick="window.location.href = 'dashboard.html';" id="cancelBtn"
+               ~     style="display: none">
+                    Cancel
+                </button>
+           
+                <!--Buttons-->
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+ 
+<script>
+            function toggleEdit() {
+            const formFields = document.querySelectorAll('#first_name', '#last_name', '#middle_name', '#phone_number','#email_address');
+            formFields.forEach(field => {
+                field.disabled = !field.disabled;
+            });
+        }
+ 
+    const editBtn = document.getElementById("editBtn");
+    const uploadBtn = document.getElementById("uploadBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const disabledFieldset = document.getElementById("disabledFieldset");
+ 
+    editBtn.addEventListener("click", function () {
+        event.preventDefault();
+        if (disabledFieldset.disabled) {
+            disabledFieldset.disabled = false;
+            uploadBtn.style.display = "inline-block";
+            saveBtn.style.display = "inline-block";
+            cancelBtn.style.display = "inline-block";
+            editBtn.textContent = "Cancel Edit";
+        } else {
+            disabledFieldset.disabled = true;
+            uploadBtn.style.display = "none";
+            saveBtn.style.display = "none";
+            cancelBtn.style.display = "none";
+            editBtn.textContent = "Edit";
+        }
+    });
+ 
+    // Function to handle photo upload
+    document.getElementById("uploadBtn").addEventListener("click", function () {
+        document.getElementById("photo").click();
+    });
+ 
+    // Function to display selected photo
+    document.getElementById("photo").addEventListener("change", function () {
+        const file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("userPhoto").src = e.target.result;
+        };
+ 
+        reader.readAsDataURL(file);
+    });
+ 
+   
+    function saveAndUpdate() {
+        console.log("This is to check Save N Update")
+        const formFields = document.querySelectorAll('#first_name, #middle_name, #last_name, #email_address, #phone_number');
+        formFields.forEach(field => {
+            field.disabled = true; // Disable all form fields
+        });
+        const form = document.getElementById('personalDetailsForm');
+        const formData = new FormData(form);
+        console.log(form)
+        console.log("This is to check")
+        fetch('/personal_details', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Update successful
+                console.log('Update successful!');
+                toggleEdit(); // Disable the fields after saving
+ 
+                // Hide the upload button
+                document.getElementById('uploadBtn').style.display = 'none';
+ 
+                // Change the button back to 'Edit'
+                const editBtn = document.getElementById('editBtn');
+                editBtn.textContent = 'Edit';
+            } else {
+                // Update failed
+                console.error('Update failed!');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+ 
+ 
+</script>
+{% endblock content %}
